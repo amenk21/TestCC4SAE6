@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="row">
+        Add new Album
+    </div>
+    <div class="row">
+        <form [formGroup]="album">
+            <div class="mb-3">
+                <label>Title : </label>
+                <input class="form-control" formControlName="title">
+            </div>
+            <div class="alert alert-danger" *ngIf="title!.invalid && (title!.touched || title!.dirty)">
+                <div *ngIf="title!.hasError('required')">Titre obligatoire</div>
+                <div *ngIf="title!.hasError('pattern')">Le titre ne doit contenir que des lettres ou des chiffres</div>
+              </div>
+              
+
+            
+           
+            <div class="mb-3">
+                <label>CreationDate :</label>
+                <input class="form-control" type="date" formControlName="creationDate">
+            </div>
+            <div class="mb-3">
+                <label>Archived :</label>
+                <input class="form-control" type="number" formControlName="archived">
+            </div>
+
+            <div class="mb-3">
+                <label>CoverPicture :</label>
+                <input class="form-control"  formControlName="coverPicture">
+            </div>
+            <div class="alert alert-danger"  *ngIf="coverPicture!.hasError('minlength')">
+                cover pic doit contenir au moins 5 characters !</div>
+            <!--<div class="mb-3" formGroupName="address">
+                <div class="mb-3">
+                    <label>Street :</label>
+                    <input class="form-control" formControlName="street">
+                </div>
+                <div class="mb-3">
+                    <label>City :</label>
+                    <input class="form-control" formControlName="city">
+                </div>
+            </div>-->
+            
+                
+
+
+
+          <!--  <div class="mb-3">
+                <label>Reservations:</label>
+                <div class="input-group mb-3">
+                    <input
+                        class="form-control"
+                        placeholder="Enter reservation ID"
+                        #reservationInput
+                    />
+                    <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        (click)="addReservation(reservationInput.value); reservationInput.value = ''"
+                    >
+                        Add
+                    </button>
+                </div>
+                <ul class="list-group">
+                    <li
+                        class="list-group-item d-flex justify-content-between align-items-center"
+                        *ngFor="let reservation of reservations; let i = index"
+                    >
+                        {{ reservation }}
+                        <button
+                            type="button"
+                            class="btn-close"
+                            aria-label="Remove"
+                            (click)="removeReservation(i)"
+                        ></button>
+                    </li>
+                </ul>
+            </div>-->
+            
+
+
+
+            <div class="mb-3">
+                <input type="submit" class="btn btn-outline-primary" (click)="add()"
+                value="Add Menu" [disabled]="album.invalid">
+            </div>
+        </form>
+    </div>
+</div>

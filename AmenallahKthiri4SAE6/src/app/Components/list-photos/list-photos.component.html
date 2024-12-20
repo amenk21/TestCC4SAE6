@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>photos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let a of albums">
+                    <td><img [src]="'../../assets/images/' + a.photos" width="50" height="50"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

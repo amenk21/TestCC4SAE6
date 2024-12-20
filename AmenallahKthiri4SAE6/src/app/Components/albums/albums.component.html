@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>title</th>
+                    <th>CoverPicture</th>
+
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let a of albums">
+                    <td><button class="btn btn-primary" [routerLink]="['listphoto/',a.id]">{{a.title}}</button></td>
+                    <td><img [src]="'../../assets/images/' + a.coverPicture" width="50" height="50"></td>
+
+
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
