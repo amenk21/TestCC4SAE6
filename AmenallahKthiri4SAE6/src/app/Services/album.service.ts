@@ -20,4 +20,7 @@ export class AlbumService {
   {
     return this.albums.filter(e=>e.archived==0);
   }
+  deleteAlbum(id: number) {
+    this.albums = this.albums.filter(album => album.id !== id);
+  }
 }

@@ -5,6 +5,7 @@
                 <tr>
                     <th>title</th>
                     <th>CoverPicture</th>
+                    
 
                     <th></th>
 
@@ -14,6 +15,8 @@
                 <tr *ngFor="let a of albums">
                     <td><button class="btn btn-primary" [routerLink]="['listphoto/',a.id]">{{a.title}}</button></td>
                     <td><img [src]="'../../assets/images/' + a.coverPicture" width="50" height="50"></td>
+                    <button class="btn btn-danger" (click)="deleteAlbum(a.id)">Supprimer</button>
+
 
 
 

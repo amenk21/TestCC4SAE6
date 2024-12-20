@@ -11,5 +11,12 @@ import { AlbumService } from 'src/app/Services/album.service';
 export class AlbumsComponent {
   constructor( private _activated : ActivatedRoute , private _albumService : AlbumService , private _router :Router){}
   albums : Album[]=this._albumService.listAlbum();
+  loadAlbums() {
+    this.albums = this._albumService.listAlbum();
+  }
 
+  deleteAlbum(id: number) {
+    this._albumService.deleteAlbum(id);
+    this.loadAlbums();
+  }
 }
